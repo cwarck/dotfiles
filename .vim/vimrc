@@ -1,0 +1,187 @@
+" Base settings
+set enc=utf-8
+set nocompatible
+set autoindent
+set backspace=indent,eol,start
+set clipboard=unnamed
+set number relativenumber
+set ruler
+set showmatch
+set smartindent
+set splitbelow
+set splitright
+set termguicolors
+set updatetime=250
+
+" Wildmenu
+set wildmenu
+set wildignore+=*.dll,*.o,*.pyc,*.bak,*.exe,*.jpg,*.jpeg,*.png,*.gif,*$py.class,*.class,*/*.dSYM/*,*.dylib
+set wildmode=list:full
+
+" Disable beeps
+set noerrorbells visualbell t_vb=
+
+" Search settings
+set hlsearch
+set ignorecase
+set incsearch
+set infercase
+
+" Indentation
+set expandtab
+set shiftwidth=4
+set softtabstop=4
+
+" Tags
+set tags=tags
+
+" Completition
+set completeopt=longest,menuone
+
+" Syntx highlighting sync from start
+autocmd BufEnter * :syntax sync fromstart
+
+" Map leader
+let mapleader=","
+let maplocalleader="\\"
+
+" Moving through wraps
+map j gj
+map k gk
+
+" Emacs style bindings
+imap <C-a> <Home>
+imap <C-e> <End>
+
+" Yank from cursor to eol
+nnoremap Y y$
+
+" Splits navigation
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+
+" NERDtree bindings
+nmap <leader>e :NERDTreeToggle<CR>
+nmap <leader>t :NERDTreeFind<CR>
+
+" ALE bindings
+nmap <leader>d :ALEToggleBuffer<CR>
+
+" Open terminal in vertical split
+nmap <leader>z :vert :terminal<CR>
+
+" FZF bindings
+nmap ; :Buffers<CR>
+nmap <leader>ft :Tags<CR>
+nmap <leader>ff :Files<CR>
+nmap <leader>fa :Ag<CR>
+nmap <leader>fl :Lines<CR>
+
+" Git bindings
+nmap <leader>gs :Gstatus<CR>
+nmap <leader>gc :Commits!<CR>
+nmap <leader>gd :Gdiff<CR>
+nmap <leader>gb :Gblame<CR>
+
+" Select the just pasted text
+nnoremap <leader>v V`]
+
+" Unbind arrows in normal mode
+nnoremap <Up> :echomsg "use k"<cr>
+nnoremap <Down> :echomsg "use j"<cr>
+nnoremap <Left> :echomsg "use h"<cr>
+nnoremap <Right> :echomsg "use l"<cr>
+
+" Tab to brackets
+nnoremap <tab> %
+vnoremap <tab> %
+
+" Various quality of life bindings
+nmap <leader><space> :nohlsearch<CR>
+nmap <leader>q :bd<CR>
+
+" Pathogen
+runtime bundle/vim-pathogen/autoload/pathogen.vim
+call pathogen#infect()
+
+" FZF
+set rtp+=/usr/local/opt/fzf
+set rtp+=~/.fzf
+command! -bang -nargs=* Ag
+  \ call fzf#vim#ag(<q-args>,
+  \                 <bang>0 ? fzf#vim#with_preview('up:60%')
+  \                         : fzf#vim#with_preview('right:50%:hidden', '?'),
+  \                 <bang>0)
+let g:fzf_tags_command = 'ctags -R'
+let g:fzf_layout = {'right': '50%'}
+let g:fzf_colors =
+\ { 'fg':      ['fg', 'Normal'],
+  \ 'bg':      ['bg', 'Normal'],
+  \ 'hl':      ['fg', 'Comment'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'hl+':     ['fg', 'Statement'],
+  \ 'info':    ['fg', 'PreProc'],
+  \ 'border':  ['fg', 'Ignore'],
+  \ 'prompt':  ['fg', 'Conditional'],
+  \ 'pointer': ['fg', 'Exception'],
+  \ 'marker':  ['fg', 'Keyword'],
+  \ 'spinner': ['fg', 'Label'],
+  \ 'header':  ['fg', 'Comment'] }
+
+" AG
+let g:ackprg = 'ag --vimgrep --ignore-dir={node_modules,.env,vendor}'
+
+" Airline
+let g:airline#extensions#ale#enabled = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#buffer_min_count = 2
+let g:airline#extensions#whitespace#checks = []
+
+" GitGutter 
+let g:gitgutter_sign_added = '|'
+let g:gitgutter_sign_modified = '|'
+let g:gitgutter_sign_removed = '|'
+let g:gitgutter_sign_modified_removed = '|'
+
+" NERD Tree
+let g:NERDTreeDirArrowExpandable = '+'
+let g:NERDTreeDirArrowCollapsible = '-'
+let g:NERDTreeChDirMode = 2
+let NERDTreeIgnore = ['\.pyc$']
+
+" NERD Commenter
+let g:NERDDefaultAlign = 'left'
+let g:NERDSpaceDelims = 1
+
+" ALE
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_enter = 0
+
+" Colors
+set background=dark
+syntax on
+colorscheme onedark
+let g:terminal_ansi_colors = [
+        \ '#282828', '#cc241d', '#98971a', '#d79921', '#458588', '#b16286', '#689d6a', '#bdae93',
+        \ '#7c6f64', '#fb4934', '#b8bb26', '#fabd2f', '#83a598', '#d3869b', '#8ec07c', '#ebdbb2']
+
+" GUI
+if has("gui_running")
+    set cursorline
+    set guifont=Roboto\ Mono\ Light\ for\ Powerline:h16
+    set guioptions=
+    colorscheme gruvbox
+endif
+
+" Enable filetype plugins and indention
+filetype plugin indent on
+
+" YAML
+autocmd FileType yaml setlocal expandtab shiftwidth=2 tabstop=8 softtabstop=2
+
+" JSON
+autocmd FileType json setlocal expandtab shiftwidth=2 tabstop=8 softtabstop=2
