@@ -174,7 +174,7 @@ if has("gui_running")
     set cursorline
     set guifont=Roboto\ Mono\ Light\ for\ Powerline:h16
     set guioptions=
-    colorscheme gruvbox
+    autocmd VimEnter * cd /Users/cwarck/Development
 endif
 
 " Enable filetype plugins and indention
