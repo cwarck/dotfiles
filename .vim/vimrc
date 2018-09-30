@@ -62,9 +62,7 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
-" NERDtree bindings
-nmap <leader>e :NERDTreeToggle<CR>
-nmap <leader>t :NERDTreeFind<CR>
+nmap <leader>e :Explore<CR>
 
 " ALE bindings
 nmap <leader>d :ALEToggleBuffer<CR>
@@ -147,11 +145,9 @@ let g:gitgutter_sign_modified = '|'
 let g:gitgutter_sign_removed = '|'
 let g:gitgutter_sign_modified_removed = '|'
 
-" NERD Tree
-let g:NERDTreeDirArrowExpandable = '+'
-let g:NERDTreeDirArrowCollapsible = '-'
-let g:NERDTreeChDirMode = 2
-let NERDTreeIgnore = ['\.pyc$']
+" netrw
+let g:netrw_liststyle = 3
+let g:netrw_banner = 0
 
 " NERD Commenter
 let g:NERDDefaultAlign = 'left'
