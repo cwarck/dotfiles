@@ -1,0 +1,15 @@
+brew "cmake"
+brew "ctags"
+brew "fd"
+brew "fzf"
+brew "python3"
+brew "python@2"
+brew "the_silver_searcher"
+brew "tree"
+brew "vim"
+brew "watch"
+
+tap "caskroom/fonts"
+
+cask "macvim"
+cask "spectacle"
