@@ -159,16 +159,20 @@ let g:ale_lint_on_enter = 0
 " Colors
 set background=dark
 syntax on
-colorscheme onedark
+colorscheme gotham256
 let g:terminal_ansi_colors = [
         \ '#282828', '#cc241d', '#98971a', '#d79921', '#458588', '#b16286', '#689d6a', '#bdae93',
         \ '#7c6f64', '#fb4934', '#b8bb26', '#fabd2f', '#83a598', '#d3869b', '#8ec07c', '#ebdbb2']
 
 " GUI
 if has("gui_running")
+    let macvim_skip_colorscheme=1
+    colorscheme gotham
+
     set cursorline
-    set guifont=Roboto\ Mono\ Light\ for\ Powerline:h16
+    set guifont=Roboto\ Mono\ for\ Powerline:h16
     set guioptions=
+
     autocmd VimEnter * cd /Users/cwarck/Development
 endif
 
