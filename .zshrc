@@ -43,7 +43,7 @@ ZSH_THEME="cwarck"
 # HIST_STAMPS="mm/dd/yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
-ZSH_CUSTOM=/Users/cwarck/.zsh-custom
+ZSH_CUSTOM=~/.zsh-custom
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -53,7 +53,7 @@ plugins=(git, virtualenv)
 
 # User configuration
 
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+#export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -87,6 +87,8 @@ source $ZSH/oh-my-zsh.sh
 alias vim='/usr/local/bin/vim'
 alias ctags='/usr/local/bin/ctags'
 alias dotf='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias nvmup='source ~/.nvm/nvm.sh'
+alias k='kubectl'
 
 # Export Github API token for Homebrew
 [ -f ~/.brew ] && source ~/.brew
