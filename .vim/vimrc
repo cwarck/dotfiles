@@ -66,6 +66,9 @@ tnoremap <C-k> <C-w>k
 tnoremap <C-h> <C-w>h
 tnoremap <C-l> <C-w>l
 
+" Space to prev buffer
+nnoremap <space> :b#<CR>
+
 nmap <leader>e :Explore<CR>
 
 " ALE bindings
@@ -77,9 +80,9 @@ nmap <leader>z :vert :terminal<CR>
 " FZF bindings
 nmap ; :Buffers<CR>
 nmap <leader>ft :Tags<CR>
-nmap <leader>ff :Files<CR>
-nmap <leader>fa :Ag<CR>
-nmap <leader>fl :Lines<CR>
+nmap <leader>ff :Files!<CR>
+nmap <leader>fa :Rg!<CR>
+nmap <leader>fl :Lines!<CR>
 
 " Git bindings
 nmap <leader>gs :Gstatus<CR>
@@ -111,13 +114,17 @@ call pathogen#infect()
 " FZF
 set rtp+=/usr/local/opt/fzf
 set rtp+=~/.fzf
-command! -bang -nargs=* Ag
-  \ call fzf#vim#ag(<q-args>,
-  \                 <bang>0 ? fzf#vim#with_preview('up:60%')
-  \                         : fzf#vim#with_preview('right:50%:hidden', '?'),
-  \                 <bang>0)
+
+" Rg config
+command! -bang -nargs=* Rg
+  \ call fzf#vim#grep(
+  \   'rg --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
+  \   <bang>0 ? fzf#vim#with_preview({'options': '--delimiter : --nth 2..'}, 'right:50%:hidden', '?')
+  \           : fzf#vim#with_preview({'options': '--delimiter : --nth 2..'}, 'right:50%:hidden', '?'),
+  \   <bang>0)
+
 let g:fzf_tags_command = 'ctags -R'
-let g:fzf_layout = {'right': '50%'}
+let g:fzf_layout = {'down': '50%'}
 let g:fzf_colors =
 \ { 'fg':      ['fg', 'Normal'],
   \ 'bg':      ['bg', 'Normal'],
@@ -134,11 +141,11 @@ let g:fzf_colors =
   \ 'header':  ['fg', 'Comment'] }
 
 " AG
-let g:ackprg = 'ag --vimgrep --ignore-dir={node_modules,.env,vendor}'
+"let g:ackprg = 'ag --vimgrep --ignore-dir={node_modules,.env,vendor}'
+"let g:ackprg = 'rg --vimgrep'
 
 " Airline
 let g:airline#extensions#ale#enabled = 1
-" let g:airline_powerline_fonts = 1
 let g:airline#extensions#whitespace#checks = []
 let g:airline_skip_empty_sections = 1
 
@@ -152,10 +159,6 @@ let g:gitgutter_sign_modified_removed = '|'
 let g:netrw_liststyle = 3
 let g:netrw_banner = 0
 
-" NERD Commenter
-let g:NERDDefaultAlign = 'left'
-let g:NERDSpaceDelims = 1
-
 " ALE
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_enter = 0
@@ -163,7 +166,7 @@ let g:ale_lint_on_enter = 0
 " Colors
 set background=dark
 syntax on
-colorscheme gotham256
+colorscheme gotham
 
 " GUI
 if has("gui_running")
