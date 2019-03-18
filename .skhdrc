@@ -45,3 +45,10 @@ shift + alt - up     : chunkc tiling::window --grid-layout 1:1:0:0:1:1
 ctrl + alt - a : chunkc tiling::desktop --layout bsp
 ctrl + alt - s : chunkc tiling::desktop --layout monocle
 ctrl + alt - d : chunkc tiling::desktop --layout float
+
+# focus monitor
+shift + cmd - return  : chunkc tiling::monitor -f next
+
+# send window to monitor and follow focus
+ctrl + cmd - z  : chunkc tiling::window --send-to-monitor prev; chunkc tiling::monitor -f prev
+ctrl + cmd - c  : chunkc tiling::window --send-to-monitor next; chunkc tiling::monitor -f next
