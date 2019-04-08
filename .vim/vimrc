@@ -13,6 +13,10 @@ set splitright
 set termguicolors
 set updatetime=250
 
+" Cursor
+set cursorline
+set cursorcolumn
+
 " Wildmenu
 set wildmenu
 set wildignore+=*.dll,*.o,*.pyc,*.bak,*.exe,*.jpg,*.jpeg,*.png,*.gif,*$py.class,*.class,*/*.dSYM/*,*.dylib
@@ -118,9 +122,9 @@ set rtp+=~/.fzf
 " Rg config
 command! -bang -nargs=* Rg
   \ call fzf#vim#grep(
-  \   'rg --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
+  \   'rg --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
   \   <bang>0 ? fzf#vim#with_preview({'options': '--delimiter : --nth 2..'}, 'right:50%:hidden', '?')
-  \           : fzf#vim#with_preview({'options': '--delimiter : --nth 2..'}, 'right:50%:hidden', '?'),
+  \           : fzf#vim#with_preview({'options': '--delimiter : --nth 2..'}),
   \   <bang>0)
 
 let g:fzf_tags_command = 'ctags -R'
@@ -139,10 +143,6 @@ let g:fzf_colors =
   \ 'marker':  ['fg', 'Keyword'],
   \ 'spinner': ['fg', 'Label'],
   \ 'header':  ['fg', 'Comment'] }
-
-" AG
-"let g:ackprg = 'ag --vimgrep --ignore-dir={node_modules,.env,vendor}'
-"let g:ackprg = 'rg --vimgrep'
 
 " Airline
 let g:airline#extensions#ale#enabled = 1
@@ -164,21 +164,9 @@ let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_enter = 0
 
 " Colors
-set background=dark
 syntax on
+set background=dark
 colorscheme gotham
-
-" GUI
-if has("gui_running")
-    let macvim_skip_colorscheme=1
-    colorscheme gotham
-
-    set cursorline
-    set guifont=Roboto\ Mono\ for\ Powerline:h16
-    set guioptions=
-
-    autocmd VimEnter * cd /Users/cwarck/Development
-endif
 
 " Enable filetype plugins and indention
 filetype plugin indent on
@@ -190,4 +178,4 @@ autocmd FileType yaml setlocal expandtab shiftwidth=2 tabstop=8 softtabstop=2
 autocmd FileType json setlocal expandtab shiftwidth=2 tabstop=8 softtabstop=2
 
 " Groovy
-autocmd FileType groovy setlocal shiftwidth=4 tabstop=8 softtabstop=4 expandtab
+autocmd FileType groovy setlocal expandtab shiftwidth=4 tabstop=8 softtabstop=4
