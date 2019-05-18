@@ -114,7 +114,7 @@ chunkc set focused_border_color          0xff0f6288
 chunkc set focused_border_width          5
 chunkc set focused_border_radius         0
 chunkc set focused_border_outline        0
-chunkc set focused_border_skip_floating  0
+chunkc set focused_border_skip_floating  1
 chunkc set focused_border_skip_monocle   0
 
 #
@@ -139,3 +139,4 @@ chunkc core::load ffm.so
 chunkc tiling::rule --owner Finder --name Copy --state float &
 chunkc tiling::rule --owner \"App Store\" --state float &
 chunkc tiling::rule --owner Emacs --except "^$" --state tile &
+chunkc tiling::rule --owner iTerm2 --name "visor" --state float
