@@ -84,7 +84,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # Aliases
-alias vim='/usr/local/bin/vim'
+alias vim='/usr/local/bin/nvim'
 alias ctags='/usr/local/bin/ctags'
 alias dotf='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias nvmup='source ~/.nvm/nvm.sh'
@@ -101,3 +101,9 @@ export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbi
 
 # Cargo
 source $HOME/.cargo/env
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/cwarck/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/cwarck/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/cwarck/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/cwarck/google-cloud-sdk/completion.zsh.inc'; fi
