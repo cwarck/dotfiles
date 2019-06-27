@@ -79,7 +79,8 @@ nmap <leader>e :Explore<CR>
 nmap <leader>d :ALEToggleBuffer<CR>
 
 " Open terminal in vertical split
-nmap <leader>z :vert :terminal<CR>
+nmap <leader>z :vnew<CR>
+nmap <leader>x :new<CR>
 
 " FZF bindings
 nmap ; :Buffers<CR>
@@ -149,12 +150,6 @@ let g:airline#extensions#ale#enabled = 1
 let g:airline#extensions#whitespace#checks = []
 let g:airline_skip_empty_sections = 1
 
-" GitGutter 
-let g:gitgutter_sign_added = '|'
-let g:gitgutter_sign_modified = '|'
-let g:gitgutter_sign_removed = '|'
-let g:gitgutter_sign_modified_removed = '|'
-
 " netrw
 let g:netrw_liststyle = 3
 let g:netrw_banner = 0
@@ -162,11 +157,17 @@ let g:netrw_banner = 0
 " ALE
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_enter = 0
+let g:ale_python_flake8_options = "python3"
+
+" Delimitmate
+let b:delimitMate_expand_cr = 2
+let b:delimitMate_expand_inside_quotes = 1
+let b:delimitMate_expand_space = 0
 
 " Colors
 syntax on
-set background=dark
-colorscheme gotham
+set background=light
+colorscheme NeoSolarized
 
 " Enable filetype plugins and indention
 filetype plugin indent on
@@ -179,3 +180,9 @@ autocmd FileType json setlocal expandtab shiftwidth=2 tabstop=8 softtabstop=2
 
 " Groovy
 autocmd FileType groovy setlocal expandtab shiftwidth=4 tabstop=8 softtabstop=4
+
+" Markdown
+autocmd FileType markdown let b:delimitMate_nesting_quotes = ['`']
+
+" Python
+autocmd FileType python let b:delimitMate_nesting_quotes = ['"']
