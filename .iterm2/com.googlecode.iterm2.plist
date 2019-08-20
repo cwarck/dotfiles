@@ -549,7 +549,7 @@
 	<key>NSWindow Frame ProfilesPanel</key>
 	<string>532 955 735 462 0 0 2560 1417 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>530 476 620 392 0 0 1680 1027 </string>
+	<string>970 768 620 392 0 0 2560 1417 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>269 126 606 469 0 0 1680 1028 </string>
 	<key>NSWindow Frame SharedPreferences</key>
@@ -557,7 +557,7 @@
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>0 0 840 1027 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 13 1680 1003 0 0 1680 1027 </string>
+	<string>0 263 1680 764 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>1280 0 1279 1417 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -3543,8 +3543,9 @@
 	</array>
 	<key>NoSyncAllAppVersions</key>
 	<array>
-		<string>3.3.0beta11</string>
 		<string>3.3.0beta10</string>
+		<string>3.3.0beta11</string>
+		<string>3.3.0beta12</string>
 	</array>
 	<key>NoSyncFrame_SharedPreferences</key>
 	<dict>
@@ -3562,7 +3563,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>530D6819-8642-44DC-BCD0-0F73E7400D70</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>46</integer>
+	<integer>52</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -3760,6 +3761,14 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
+				<string>tmuxPaneTitle</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
 				<string>rows</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
@@ -3793,6 +3802,14 @@
 				<true/>
 				<key>name</key>
 				<string>badge</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>tab.tmuxWindowName</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -4038,6 +4055,14 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
+				<string>tmuxWindowTitle</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
 				<string>currentSession.presentationName</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
@@ -4087,6 +4112,14 @@
 				<true/>
 				<key>name</key>
 				<string>currentSession.name</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>tmuxWindowName</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -4217,9 +4250,16 @@
 	</dict>
 	<key>NoSyncSearchHistory</key>
 	<array>
-		<string>createCamp</string>
-		<string>ssh://git@devlab.itsumma.com:2232/clients-infra/ansible-trade.gitssh://git@devlab.itsumma.com:2232/clients-infra/ansible-trade.git</string>
-		<string>extra-vars</string>
+		<string>192.168.0</string>
+		<string>networkconn</string>
+		<string>networksns</string>
+		<string>networksc</string>
+		<string>192help</string>
+		<string>ops-</string>
+		<string>flavorf </string>
+		<string>waiting</string>
+		<string>imagesq</string>
+		<string>create</string>
 	</array>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
 	<real>534659832.01956201</real>
@@ -4291,7 +4331,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-06-14T05:19:23Z</date>
+	<date>2019-07-02T04:53:20Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateRelaunchingMarker</key>
@@ -4303,7 +4343,7 @@
 	<key>ShowBookmarkName</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
-	<true/>
+	<false/>
 	<key>ShowPaneTitles</key>
 	<false/>
 	<key>SmartPlacement</key>
@@ -4361,7 +4401,7 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.3.0beta11</string>
+	<string>3.3.0beta12</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
