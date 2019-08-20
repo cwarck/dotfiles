@@ -166,8 +166,8 @@ let b:delimitMate_expand_space = 0
 
 " Colors
 syntax on
-set background=light
-colorscheme NeoSolarized
+set background=dark
+colorscheme challenger_deep
 
 " Enable filetype plugins and indention
 filetype plugin indent on
