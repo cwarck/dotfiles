@@ -1,0 +1,8 @@
+[user]
+	name = cwarck
+	email = cwarck@gmail.com
+[core]
+	excludesfile = /Users/cwarck/.gitignore_global
+	editor = vim
+[credential "https://source.developers.google.com"]
+	helper = gcloud.sh
