@@ -186,3 +186,6 @@ autocmd FileType markdown let b:delimitMate_nesting_quotes = ['`']
 
 " Python
 autocmd FileType python let b:delimitMate_nesting_quotes = ['"']
+
+" Go
+autocmd FileType go setlocal shiftwidth=4 tabstop=4 softtabstop=4
