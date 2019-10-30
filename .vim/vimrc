@@ -1,3 +1,36 @@
+call plug#begin('~/.local/share/nvim/site/autoload')
+
+" FZF
+Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf.vim'
+
+" Linting
+Plug 'w0rp/ale'
+
+" Git
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+
+" Quotes, parenthesis, brackets
+Plug 'raimondi/delimitmate'
+
+" Statusline
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
+" Colors
+Plug 'challenger-deep-theme/vim'
+
+" Syntax
+Plug 'thanethomson/vim-jenkinsfile'
+Plug 'glench/vim-jinja2-syntax'
+Plug 'chr4/nginx.vim'
+
+" Lang
+Plug 'rust-lang/rust.vim'
+
+call plug#end()
+
 " Base settings
 set enc=utf-8
 set nocompatible
@@ -111,14 +144,6 @@ vnoremap <tab> %
 " Various quality of life bindings
 nmap <leader><space> :nohlsearch<CR>
 nmap <leader>q :bd<CR>
-
-" Pathogen
-runtime bundle/vim-pathogen/autoload/pathogen.vim
-call pathogen#infect()
-
-" FZF
-set rtp+=/usr/local/opt/fzf
-set rtp+=~/.fzf
 
 " Rg config
 command! -bang -nargs=* Rg
