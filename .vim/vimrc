@@ -24,7 +24,6 @@ Plug 'challenger-deep-theme/vim'
 " Syntax
 Plug 'thanethomson/vim-jenkinsfile'
 Plug 'glench/vim-jinja2-syntax'
-Plug 'chr4/nginx.vim'
 
 " Lang
 Plug 'rust-lang/rust.vim'
