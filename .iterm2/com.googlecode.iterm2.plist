@@ -16,6 +16,8 @@
 	<false/>
 	<key>AppleAntiAliasingThreshold</key>
 	<integer>1</integer>
+	<key>ApplePressAndHoldEnabled</key>
+	<false/>
 	<key>AppleScrollAnimationEnabled</key>
 	<integer>0</integer>
 	<key>AppleSmoothFixedFontsSizeThreshold</key>
@@ -804,6 +806,8 @@
 	<string>978 105 445 77 0 0 1680 1027 </string>
 	<key>NSWindow Frame ProfilesPanel</key>
 	<string>532 955 735 462 0 0 2560 1417 </string>
+	<key>NSWindow Frame SUStatusFrame</key>
+	<string>736 481 400 129 0 0 1680 1027 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>530 476 620 392 0 0 1680 1027 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
@@ -1605,7 +1609,7 @@
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>FiraCode-Medium 15</string>
+			<string>FiraCode-Retina 14</string>
 			<key>Only The Default BG Color Uses Transparency</key>
 			<false/>
 			<key>Open Toolbelt</key>
@@ -3814,15 +3818,18 @@
 	<key>NoSyncAllAppVersions</key>
 	<array>
 		<string>3.3.3beta1</string>
-		<string>3.3.0beta12</string>
-		<string>3.3.0beta11</string>
-		<string>3.3.0beta13</string>
-		<string>3.3.7beta1</string>
-		<string>3.3.5beta3</string>
+		<string>3.3.8beta3</string>
 		<string>3.3.0beta10</string>
+		<string>3.3.7beta1</string>
+		<string>3.3.0beta11</string>
+		<string>3.3.8beta5</string>
 		<string>3.3.2beta1</string>
-		<string>3.3.5beta1</string>
+		<string>3.3.0beta12</string>
+		<string>3.3.0beta13</string>
 		<string>3.3.3beta2</string>
+		<string>3.3.5beta1</string>
+		<string>3.3.5beta3</string>
+		<string>3.3.9beta1</string>
 	</array>
 	<key>NoSyncBFPRecents</key>
 	<array>
@@ -3845,7 +3852,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>530D6819-8642-44DC-BCD0-0F73E7400D70</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>80</integer>
+	<integer>89</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -4586,32 +4593,6 @@
 			</dict>
 		</array>
 	</dict>
-	<key>NoSyncSearchHistory</key>
-	<array>
-		<string>yarn</string>
-		<string>lock</string>
-		<string>Step</string>
-		<string>invoke</string>
-		<string>192.168.0</string>
-		<string>networkconn</string>
-		<string>networksns</string>
-		<string>networksc</string>
-		<string>192help</string>
-		<string>ops-</string>
-	</array>
-	<key>NoSyncSearchHistory2</key>
-	<array>
-		<string>kafka-2</string>
-		<string>9696</string>
-		<string>9697</string>
-		<string>2cpu</string>
-		<string>2cpb</string>
-		<string>10.80.4.252ping </string>
-		<string>fzf</string>
-		<string>error date</string>
-		<string>error conn</string>
-		<string>connecting</string>
-	</array>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
 	<real>534659832.01956201</real>
 	<key>OnlyWhenMoreTabs</key>
@@ -4662,9 +4643,11 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-10-18T10:51:38Z</date>
+	<date>2020-02-18T13:22:53Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
+	<key>SUUpdateGroupIdentifier</key>
+	<integer>4110875155</integer>
 	<key>SUUpdateRelaunchingMarker</key>
 	<false/>
 	<key>SavePasteHistory</key>
@@ -4732,7 +4715,7 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.3.7beta1</string>
+	<string>3.3.9beta1</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
