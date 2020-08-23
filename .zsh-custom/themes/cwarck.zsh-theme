@@ -9,7 +9,7 @@ PROMPT2='%{$fg[red]%}\ %{$reset_color%}'
 RPS1='${return_code}'
 
 # Git
-ZSH_THEME_GIT_PROMPT_PREFIX=" %{$fg[blue]%}"
+ZSH_THEME_GIT_PROMPT_PREFIX=" %{$fg[cyan]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[green]%}+"
 ZSH_THEME_GIT_PROMPT_BRANCH=""

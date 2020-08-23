@@ -1,46 +1,46 @@
 # env
-export EDITOR='nvim'
+export EDITOR=vim
 export LANG=en_US.UTF-8
-export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin
-export ZSH=~/.oh-my-zsh
+export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin
+export ZSH=$HOME/.oh-my-zsh
 
+# Go
 export GOROOT=/usr/local/go
-export GOPATH=~/go
-
-ZSH_THEME="cwarck"
-ZSH_CUSTOM=~/.zsh-custom
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOROOT/bin
 
 # aliases
-alias vim='/usr/local/bin/nvim'
 alias dotf='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-alias ctags='/usr/local/bin/ctags'
 alias nvmup='source ~/.nvm/nvm.sh'
-alias k='kubectl'
 
 # git aliases
-function set_itsumma_git_user() {
-    git config user.email "iakimov@itsumma.ru";
-    git config user.name "Ilia Akimov"
-}
-alias git.itsumma.user='set_itsumma_git_user'
+[ -f ~/scripts/git-aliases.sh ] && source ~/scripts/git-aliases.sh
 
 # load oh-my-zsh
-[ -f $ZSH/oh-my-zsh.sh ] && source $ZSH/oh-my-zsh.sh
+[ -f $ZSH/oh-my-zsh.sh ] && . $ZSH/oh-my-zsh.sh
 
 # Export Github API token for Homebrew
-[ -f ~/.brew ] && source ~/.brew
+[ -f $HOME/.brew ] && . $HOME/.brew
 
 # load fzf
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f $HOME/.fzf.zsh ] && . $HOME/.fzf.zsh
 
 # load cargo
-[ -f ~/.cargo/env ] && source ~/.cargo/env
+[ -f $HOME/.cargo/env ] && . $HOME/.cargo/env
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/cwarck/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/cwarck/google-cloud-sdk/path.zsh.inc'; fi
+# Gcloud
+[ -f $HOME/google-cloud-sdk/path.zsh.inc ] && . $HOME/google-cloud-sdk/path.zsh.inc
+[ -f $HOME/google-cloud-sdk/completion.zsh.inc ] && . $HOME/google-cloud-sdk/completion.zsh.inc
 
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/cwarck/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/cwarck/google-cloud-sdk/completion.zsh.inc'; fi
-
-# add Pulumi to the PATH
+# Pulumi
 export PATH=$PATH:$HOME/.pulumi/bin
+
+# Kubernetes
+alias k='kubectl'
+source <(kubectl completion zsh)
+
+# load starship
+eval "$(starship init zsh)"
+
+# VSCode
+export PATH=$PATH:"/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
