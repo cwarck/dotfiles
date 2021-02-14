@@ -11,21 +11,20 @@ export PATH=$PATH:$GOROOT/bin
 
 # aliases
 alias dotf='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-alias nvmup='source ~/.nvm/nvm.sh'
 
 # git aliases
 [ -f ~/scripts/git-aliases.sh ] && source ~/scripts/git-aliases.sh
 
-# load oh-my-zsh
+# oh-my-zsh
 [ -f $ZSH/oh-my-zsh.sh ] && . $ZSH/oh-my-zsh.sh
 
 # Export Github API token for Homebrew
 [ -f $HOME/.brew ] && . $HOME/.brew
 
-# load fzf
+# fzf
 [ -f $HOME/.fzf.zsh ] && . $HOME/.fzf.zsh
 
-# load cargo
+# cargo
 [ -f $HOME/.cargo/env ] && . $HOME/.cargo/env
 
 # Gcloud
@@ -35,12 +34,16 @@ alias nvmup='source ~/.nvm/nvm.sh'
 # Pulumi
 export PATH=$PATH:$HOME/.pulumi/bin
 
-# Kubernetes
-alias k='kubectl'
-source <(kubectl completion zsh)
-
-# load starship
+# starship
 eval "$(starship init zsh)"
 
 # VSCode
 export PATH=$PATH:"/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+
+# asdf
+alias a=asdf
+. /usr/local/opt/asdf/asdf.sh
+
+# Kubernetes
+alias k='kubectl'
+source <($(asdf which kubectl) completion zsh)
